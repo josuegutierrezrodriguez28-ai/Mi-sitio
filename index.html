@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VPN: Funcionamiento, tipos y aplicaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#ffffff" opacity="0.15"/>
+    <path d="M32 6c-11 4-18 6-18 6v18c0 13 8 22 18 28 10-6 18-15 18-28V12s-7-2-18-6z" fill="#ffffff"/>
+    <path d="M32 6c-11 4-18 6-18 6v18c0 13 8 22 18 28V6z" fill="#e6f2fb"/>
+    <circle cx="32" cy="30" r="7" fill="#0077cc"/>
+    <rect x="28.5" y="34" width="7" height="10" rx="2" fill="#0077cc"/>
+  </svg>
+  <div>
+    <h1>VPN: Funcionamiento, tipos y aplicaciones</h1>
+    <p>Estudiante: <strong>Josué Gutiérrez</strong> &nbsp;•&nbsp; COM22 Producción Multimedial — Práctica Final</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- SECCIÓN DE PRESENTACIÓN -->
+  <section id="presentacion">
+    <h2>Presentación</h2>
+    <figure>
+      <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+        <rect width="800" height="450" fill="#e6f2fb"/>
+        <circle cx="120" cy="90" r="60" fill="#ffffff"/>
+        <circle cx="700" cy="380" r="90" fill="#ffffff"/>
+        <!-- laptop -->
+        <rect x="80" y="230" width="160" height="100" rx="6" fill="#333333"/>
+        <rect x="92" y="240" width="136" height="80" fill="#0077cc"/>
+        <rect x="60" y="330" width="200" height="14" rx="4" fill="#333333"/>
+        <!-- tunnel -->
+        <path d="M250 280 C 380 180, 460 380, 590 260" stroke="#2ecc71" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="2 18"/>
+        <!-- lock over tunnel -->
+        <g transform="translate(400,205)">
+          <rect x="-22" y="0" width="44" height="34" rx="6" fill="#0077cc"/>
+          <path d="M-14 0 v-12 a14 14 0 0 1 28 0 v12" stroke="#0077cc" stroke-width="8" fill="none"/>
+        </g>
+        <!-- server -->
+        <g transform="translate(600,190)">
+          <rect x="0" y="0" width="90" height="130" rx="8" fill="#333333"/>
+          <rect x="12" y="14" width="66" height="14" rx="3" fill="#2ecc71"/>
+          <rect x="12" y="36" width="66" height="14" rx="3" fill="#0077cc"/>
+          <rect x="12" y="58" width="66" height="14" rx="3" fill="#0077cc"/>
+          <rect x="12" y="80" width="66" height="14" rx="3" fill="#0077cc"/>
+        </g>
+        <!-- globe icon -->
+        <g transform="translate(660,340)">
+          <circle r="46" fill="#ffffff" stroke="#0077cc" stroke-width="4"/>
+          <ellipse rx="46" ry="18" fill="none" stroke="#0077cc" stroke-width="3"/>
+          <ellipse rx="18" ry="46" fill="none" stroke="#0077cc" stroke-width="3"/>
+          <line x1="-46" y1="0" x2="46" y2="0" stroke="#0077cc" stroke-width="3"/>
+        </g>
+        <text x="400" y="420" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" fill="#1a1a1a" font-weight="700">Conexión cifrada entre el usuario y la red</text>
+      </svg>
+      <figcaption>Figura 1. Representación de una conexión VPN: el tráfico viaja cifrado a través de un túnel virtual hasta un servidor remoto.</figcaption>
+    </figure>
+  </section>
+
+  <!-- INTRODUCCIÓN -->
+  <section id="introduccion">
+    <h2>1. Introducción</h2>
+    <p>Una <strong>VPN</strong> (Virtual Private Network o Red Privada Virtual) es una tecnología que permite crear una conexión segura y cifrada entre un dispositivo y una red, utilizando internet como medio de transporte. En lugar de que los datos viajen expuestos por la red pública, la VPN los envuelve en un "túnel" cifrado que impide que terceros puedan leerlos o modificarlos.</p>
+    <p>Esta tecnología es importante porque hoy la mayoría de las actividades personales, académicas y empresariales dependen de internet. Con el aumento del trabajo remoto, el comercio electrónico y el manejo de información sensible en la nube, proteger la privacidad y la integridad de los datos se ha vuelto una necesidad, no un lujo. Una VPN reduce el riesgo de robo de información, oculta la ubicación real del usuario y permite acceder a recursos internos de una organización como si se estuviera físicamente en sus instalaciones.</p>
+  </section>
+
+  <!-- DESARROLLO / CONTENIDO -->
+  <section id="desarrollo">
+    <h2>2. Desarrollo / Contenido</h2>
+
+    <h3>2.1 ¿Cómo funciona una VPN?</h3>
+    <p>El funcionamiento de una VPN se basa en tres procesos que ocurren de forma simultánea:</p>
+    <ol>
+      <li><strong>Encapsulación:</strong> los datos originales se envuelven dentro de otro paquete de red, ocultando su contenido real durante el transporte.</li>
+      <li><strong>Cifrado:</strong> la información se codifica mediante algoritmos matemáticos (como AES-256), de modo que solo el emisor y el receptor autorizados puedan descifrarla.</li>
+      <li><strong>Túnel virtual:</strong> se establece una ruta lógica y protegida entre el dispositivo del usuario y el servidor VPN, a través de la cual viajan los paquetes encapsulados.</li>
+    </ol>
+    <p>Cuando un usuario se conecta a una VPN, su tráfico sale primero hacia el servidor VPN y luego hacia su destino final en internet. Esto hace que la dirección IP visible sea la del servidor y no la del usuario, ocultando su ubicación real.</p>
+
+    <h3>2.2 Tipos de VPN</h3>
+    <ul>
+      <li><strong>VPN de acceso remoto:</strong> conecta a un usuario individual con la red de una empresa desde cualquier ubicación, muy usada en trabajo remoto.</li>
+      <li><strong>VPN sitio a sitio (Site-to-Site):</strong> conecta redes completas entre sí, por ejemplo, la sede principal de una empresa con una sucursal.</li>
+      <li><strong>VPN SSL:</strong> funciona a través del navegador, sin necesidad de instalar software adicional; ideal para accesos puntuales.</li>
+      <li><strong>VPN IPsec:</strong> opera a nivel de red y ofrece cifrado robusto, comúnmente usada en entornos corporativos.</li>
+      <li><strong>VPN personal o comercial:</strong> servicios como los que usan usuarios individuales para proteger su navegación diaria o acceder a contenido restringido geográficamente.</li>
+    </ul>
+
+    <h3>2.3 Ventajas y desventajas</h3>
+    <div class="adv-desv">
+      <div class="adv">
+        <h4>Ventajas</h4>
+        <ul>
+          <li>Protege la privacidad y oculta la dirección IP real</li>
+          <li>Cifra la información en redes públicas o Wi-Fi abiertas</li>
+          <li>Permite acceder a recursos corporativos de forma remota</li>
+          <li>Evita restricciones geográficas de contenido</li>
+        </ul>
+      </div>
+      <div class="desv">
+        <h4>Desventajas</h4>
+        <ul>
+          <li>Puede reducir la velocidad de conexión</li>
+          <li>Configuración compleja para usuarios sin experiencia técnica</li>
+          <li>Requiere confiar en el proveedor del servicio VPN</li>
+          <li>Algunas plataformas bloquean el tráfico proveniente de VPN</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>2.4 Componentes y herramientas</h3>
+    <p>Una implementación de VPN típicamente incluye un cliente VPN (software en el dispositivo del usuario), un servidor VPN (que gestiona las conexiones entrantes) y un protocolo de comunicación que define cómo se cifran y transportan los datos.</p>
+    <table>
+      <caption>Tabla 1. Protocolos VPN más utilizados</caption>
+      <thead>
+        <tr><th>Protocolo</th><th>Nivel de seguridad</th><th>Velocidad</th><th>Uso común</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>OpenVPN</td><td>Alto</td><td>Media</td><td>Uso general, código abierto</td></tr>
+        <tr><td>WireGuard</td><td>Alto</td><td>Alta</td><td>Servicios modernos y móviles</td></tr>
+        <tr><td>IPsec/IKEv2</td><td>Muy alto</td><td>Alta</td><td>Entornos corporativos</td></tr>
+        <tr><td>PPTP</td><td>Bajo (obsoleto)</td><td>Muy alta</td><td>Compatibilidad antigua</td></tr>
+      </tbody>
+    </table>
+
+    <figure>
+      <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+        <rect width="800" height="450" fill="#ffffff"/>
+        <rect x="0" y="0" width="800" height="450" fill="#f5f5f5"/>
+        <!-- user -->
+        <circle cx="110" cy="225" r="46" fill="#0077cc"/>
+        <text x="110" y="234" text-anchor="middle" font-family="Poppins" font-size="16" fill="#fff" font-weight="700">Usuario</text>
+        <!-- arrow encrypted -->
+        <path d="M160 225 H340" stroke="#2ecc71" stroke-width="8" stroke-linecap="round"/>
+        <polygon points="340,215 360,225 340,235" fill="#2ecc71"/>
+        <rect x="215" y="192" width="70" height="30" rx="6" fill="#333333"/>
+        <text x="250" y="212" text-anchor="middle" font-family="Roboto" font-size="12" fill="#fff">Cifrado</text>
+        <!-- vpn server -->
+        <rect x="360" y="175" width="110" height="100" rx="8" fill="#0077cc"/>
+        <text x="415" y="220" text-anchor="middle" font-family="Poppins" font-size="15" fill="#fff" font-weight="700">Servidor</text>
+        <text x="415" y="240" text-anchor="middle" font-family="Poppins" font-size="15" fill="#fff" font-weight="700">VPN</text>
+        <!-- arrow to internet -->
+        <path d="M470 225 H650" stroke="#333333" stroke-width="8" stroke-linecap="round"/>
+        <polygon points="650,215 670,225 650,235" fill="#333333"/>
+        <!-- internet cloud -->
+        <g transform="translate(690,225)">
+          <ellipse rx="70" ry="44" fill="#e6f2fb" stroke="#0077cc" stroke-width="3"/>
+          <text x="0" y="6" text-anchor="middle" font-family="Poppins" font-size="15" fill="#0077cc" font-weight="700">Internet</text>
+        </g>
+        <text x="400" y="380" text-anchor="middle" font-family="Roboto" font-size="15" fill="#333333">El servidor VPN oculta la IP real del usuario ante los sitios de destino</text>
+      </svg>
+      <figcaption>Figura 2. Flujo de datos de un usuario a través de un servidor VPN hasta internet.</figcaption>
+    </figure>
+  </section>
+
+  <!-- EJEMPLOS O CASOS PRÁCTICOS -->
+  <section id="ejemplos">
+    <h2>3. Ejemplos o casos prácticos</h2>
+    <p>Las VPN se aplican en múltiples contextos reales. Algunos de los más comunes son:</p>
+    <ul>
+      <li><strong>Trabajo remoto:</strong> empresas como bancos, aseguradoras y compañías tecnológicas usan VPN de acceso remoto para que sus empleados se conecten de forma segura a sistemas internos desde casa.</li>
+      <li><strong>Conexión entre sucursales:</strong> cadenas comerciales con varias sedes usan VPN sitio a sitio para compartir bases de datos e inventarios entre ubicaciones.</li>
+      <li><strong>Protección en redes públicas:</strong> viajeros y estudiantes usan VPN comerciales (como NordVPN o ExpressVPN) al conectarse a Wi-Fi de aeropuertos, cafés o universidades.</li>
+      <li><strong>Acceso a contenido internacional:</strong> usuarios utilizan VPN para acceder a catálogos de streaming disponibles solo en otros países.</li>
+      <li><strong>Periodismo y activismo:</strong> en países con censura, periodistas usan VPN para comunicarse de forma segura y evitar el bloqueo de sitios informativos.</li>
+    </ul>
+
+    <table>
+      <caption>Tabla 2. Comparación de casos de uso</caption>
+      <thead>
+        <tr><th>Caso de uso</th><th>Tipo de VPN recomendada</th><th>Objetivo principal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Empleado en home office</td><td>Acceso remoto</td><td>Conectarse a la red corporativa</td></tr>
+        <tr><td>Empresa con varias sedes</td><td>Sitio a sitio</td><td>Compartir recursos internos</td></tr>
+        <tr><td>Usuario en Wi-Fi público</td><td>VPN comercial (SSL)</td><td>Proteger la navegación diaria</td></tr>
+        <tr><td>Acceso a contenido geobloqueado</td><td>VPN comercial</td><td>Cambiar la ubicación aparente</td></tr>
+      </tbody>
+    </table>
+
+    <figure>
+      <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+        <rect width="800" height="450" fill="#ffffff"/>
+        <!-- office building -->
+        <rect x="60" y="160" width="140" height="180" fill="#0077cc"/>
+        <text x="130" y="150" text-anchor="middle" font-family="Poppins" font-size="14" fill="#333" font-weight="700">Oficina central</text>
+        <g fill="#e6f2fb">
+          <rect x="80" y="180" width="24" height="24"/><rect x="118" y="180" width="24" height="24"/><rect x="156" y="180" width="24" height="24"/>
+          <rect x="80" y="220" width="24" height="24"/><rect x="118" y="220" width="24" height="24"/><rect x="156" y="220" width="24" height="24"/>
+          <rect x="80" y="260" width="24" height="24"/><rect x="118" y="260" width="24" height="24"/><rect x="156" y="260" width="24" height="24"/>
+        </g>
+        <!-- home -->
+        <g transform="translate(650,220)">
+          <polygon points="0,-50 -55,-5 55,-5" fill="#2ecc71"/>
+          <rect x="-40" y="-5" width="80" height="55" fill="#333333"/>
+          <rect x="-12" y="15" width="24" height="35" fill="#e6f2fb"/>
+        </g>
+        <text x="650" y="300" text-anchor="middle" font-family="Poppins" font-size="14" fill="#333" font-weight="700">Empleado remoto</text>
+        <!-- tunnel line -->
+        <path d="M210 260 C 350 100, 500 400, 600 240" stroke="#2ecc71" stroke-width="8" fill="none" stroke-dasharray="2 16" stroke-linecap="round"/>
+        <g transform="translate(400,235)">
+          <rect x="-20" y="0" width="40" height="30" rx="5" fill="#0077cc"/>
+          <path d="M-12 0 v-10 a12 12 0 0 1 24 0 v10" stroke="#0077cc" stroke-width="7" fill="none"/>
+        </g>
+        <text x="400" y="400" text-anchor="middle" font-family="Roboto" font-size="15" fill="#333333">Ejemplo real: acceso remoto seguro a la red de la empresa</text>
+      </svg>
+      <figcaption>Figura 3. Caso práctico: conexión VPN de acceso remoto entre un empleado y la oficina central.</figcaption>
+    </figure>
+  </section>
+
+  <!-- CONCLUSIONES -->
+  <section id="conclusiones">
+    <h2>4. Conclusiones</h2>
+    <ul>
+      <li>La VPN es una herramienta fundamental para proteger la privacidad y la seguridad de la información en redes públicas y privadas.</li>
+      <li>Existen distintos tipos de VPN según la necesidad: acceso remoto, sitio a sitio, SSL o IPsec, cada una orientada a un contexto de uso diferente.</li>
+      <li>La elección del protocolo (OpenVPN, WireGuard, IPsec) depende del equilibrio deseado entre seguridad y velocidad.</li>
+      <li>En la industria actual, con el crecimiento del trabajo remoto y el manejo masivo de datos en la nube, las VPN se han vuelto un componente esencial de la infraestructura de ciberseguridad empresarial.</li>
+      <li>Comprender su funcionamiento permite tomar decisiones más informadas tanto a nivel personal como profesional sobre cómo proteger la información que circula por internet.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© Derechos reservados</p>
+  <p>Josué Gutiérrez — 2026</p>
+</footer>
+
+</body>
+</html>
